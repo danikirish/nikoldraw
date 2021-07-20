@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9351291326A5DCC900530F3E /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351291226A5DCC900530F3E /* EntryViewController.swift */; };
+		9351291626A71EA500530F3E /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351291526A71EA500530F3E /* DrawingViewController.swift */; };
 		93B485EF2696D2380040AD66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B485EE2696D2380040AD66 /* AppDelegate.swift */; };
 		93B485F12696D2380040AD66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B485F02696D2380040AD66 /* SceneDelegate.swift */; };
 		93B485F32696D2380040AD66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B485F22696D2380040AD66 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9351291226A5DCC900530F3E /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		9351291526A71EA500530F3E /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		93B485EB2696D2380040AD66 /* nikoldraws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nikoldraws.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B485EE2696D2380040AD66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B485F02696D2380040AD66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				93B485F72696D23A0040AD66 /* Assets.xcassets */,
 				93B485F92696D23A0040AD66 /* LaunchScreen.storyboard */,
 				93B485FC2696D23A0040AD66 /* Info.plist */,
+				9351291226A5DCC900530F3E /* EntryViewController.swift */,
+				9351291526A71EA500530F3E /* DrawingViewController.swift */,
 			);
 			path = nikoldraws;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B485F32696D2380040AD66 /* ViewController.swift in Sources */,
+				9351291326A5DCC900530F3E /* EntryViewController.swift in Sources */,
 				93B485EF2696D2380040AD66 /* AppDelegate.swift in Sources */,
 				93B485F12696D2380040AD66 /* SceneDelegate.swift in Sources */,
+				9351291626A71EA500530F3E /* DrawingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +303,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Danikirish.nikoldraws;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Danikirish.nikoldraws;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
