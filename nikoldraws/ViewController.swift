@@ -7,11 +7,32 @@
 
 import UIKit
 
+class Drawing {
+    
+    var title: String
+    var createdOn: String
+    
+    init(title: String) {
+        self.title = title
+        
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        
+        formatter.timeStyle = .none
+        formatter.dateStyle = .short
+        
+        self.createdOn = formatter.string(from: currentDateTime)
+    }
+    
+    
+    
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     // list of drawings
-    var drawings = [String]()
+    var drawings = [Drawing]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +52,10 @@ class ViewController: UIViewController {
         
         // Get all drawings
         updateDrawings()
+        
+        print(UserDefaults().value(forKey: "setup") as? Bool)
+        print(UserDefaults().value(forKey: "count") as? Int)
+        print(UserDefaults().value(forKey: "drawing0") as? Drawing)
     }
     
     func updateDrawings() {
@@ -43,7 +68,7 @@ class ViewController: UIViewController {
         
         for x in 0..<count {
             
-            if let drawing = UserDefaults().value(forKey: "drawing_\(x+1)") as? String {
+            if let drawing = UserDefaults().value(forKey: "drawing_\(x+1)") as? Drawing {
                 drawings.append(drawing)
             }
             
@@ -94,8 +119,8 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = drawings[indexPath.row]
+        let instance = drawings[indexPath.row]
+        cell.textLabel?.text = instance.title
         
         return cell
     }
