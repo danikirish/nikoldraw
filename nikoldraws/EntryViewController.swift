@@ -20,6 +20,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveDrawing))
     }
     
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        
         saveDrawing()

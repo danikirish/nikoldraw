@@ -64,7 +64,7 @@ class ViewController: UIViewController {
                 self.updateDrawings()
             }
         }
-        // return to root view controller
+        // go to entry view controller
         navigationController?.pushViewController(vc, animated: true)
     }
 
