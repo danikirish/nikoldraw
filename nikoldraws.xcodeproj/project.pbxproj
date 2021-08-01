@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9335F4B726B59AF8009E5DC1 /* Prompts.json in Resources */ = {isa = PBXBuildFile; fileRef = 9335F4B626B59AF8009E5DC1 /* Prompts.json */; };
 		9351291326A5DCC900530F3E /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351291226A5DCC900530F3E /* EntryViewController.swift */; };
 		9351291626A71EA500530F3E /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351291526A71EA500530F3E /* DrawingViewController.swift */; };
+		935E3DD226B45BB500DDF846 /* PromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E3DD126B45BB500DDF846 /* PromptController.swift */; };
 		93B485EF2696D2380040AD66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B485EE2696D2380040AD66 /* AppDelegate.swift */; };
 		93B485F12696D2380040AD66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B485F02696D2380040AD66 /* SceneDelegate.swift */; };
 		93B485F32696D2380040AD66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B485F22696D2380040AD66 /* ViewController.swift */; };
@@ -18,8 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9335F4B626B59AF8009E5DC1 /* Prompts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Prompts.json; sourceTree = "<group>"; };
 		9351291226A5DCC900530F3E /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		9351291526A71EA500530F3E /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		935E3DD126B45BB500DDF846 /* PromptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptController.swift; sourceTree = "<group>"; };
 		93B485EB2696D2380040AD66 /* nikoldraws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nikoldraws.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B485EE2696D2380040AD66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B485F02696D2380040AD66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				93B485EE2696D2380040AD66 /* AppDelegate.swift */,
+				9335F4B626B59AF8009E5DC1 /* Prompts.json */,
 				93B485F02696D2380040AD66 /* SceneDelegate.swift */,
 				93B485F22696D2380040AD66 /* ViewController.swift */,
 				93B485F42696D2380040AD66 /* Main.storyboard */,
@@ -69,6 +74,7 @@
 				93B485FC2696D23A0040AD66 /* Info.plist */,
 				9351291226A5DCC900530F3E /* EntryViewController.swift */,
 				9351291526A71EA500530F3E /* DrawingViewController.swift */,
+				935E3DD126B45BB500DDF846 /* PromptController.swift */,
 			);
 			path = nikoldraws;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B485FB2696D23A0040AD66 /* LaunchScreen.storyboard in Resources */,
+				9335F4B726B59AF8009E5DC1 /* Prompts.json in Resources */,
 				93B485F82696D23A0040AD66 /* Assets.xcassets in Resources */,
 				93B485F62696D2380040AD66 /* Main.storyboard in Resources */,
 			);
@@ -144,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B485F32696D2380040AD66 /* ViewController.swift in Sources */,
+				935E3DD226B45BB500DDF846 /* PromptController.swift in Sources */,
 				9351291326A5DCC900530F3E /* EntryViewController.swift in Sources */,
 				93B485EF2696D2380040AD66 /* AppDelegate.swift in Sources */,
 				93B485F12696D2380040AD66 /* SceneDelegate.swift in Sources */,
@@ -231,6 +239,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -285,6 +294,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

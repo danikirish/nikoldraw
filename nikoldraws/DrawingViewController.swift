@@ -11,12 +11,12 @@ class DrawingViewController: UIViewController {
 
     @IBOutlet var label: UILabel!
     
-    var drawing: String?
+    var prompt: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = drawing
+        label.text = prompt
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteDrawing))
         

@@ -9,14 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    /*
+     --- Start generator here ---
+     */
+    
+    var promptController = PromptController()
+    
+    /*
+     --- End generator here ---
+     */
+    
     @IBOutlet var tableView: UITableView!
     // list of drawings
-    var drawings = [String]()
+    var prompts = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Drawings"
+        self.title = "Prompts"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,38 +40,42 @@ class ViewController: UIViewController {
         }
         
         // Get all drawings
-        updateDrawings()
+        updatePrompts()
     }
     
-    func updateDrawings() {
+    func updatePrompts() {
         
-        drawings.removeAll()
+        prompts.removeAll()
+//        words.removeAll()
         
         guard let count = UserDefaults().value(forKey: "count") as? Int else {
             return
         }
-        
+
         for x in 0..<count {
-            
-            if let drawing = UserDefaults().value(forKey: "drawing_\(x+1)") as? String {
-                drawings.append(drawing)
+
+            if let prompt = UserDefaults().value(forKey: "prompt_\(x+1)") as? String {
+                prompts.append(prompt)
             }
-            
+
         }
+        
+//        prompts = promptController.prompts
         
         tableView.reloadData()
         
     }
     
-    // Called on button "Add"
+    // Called on button "Generate"
     @IBAction func didTapAdd() {
         
         let vc = storyboard?.instantiateViewController(identifier: "entry") as! EntryViewController
-        vc.title = "New Drawing"
-        // prioritise calling updateDrawings()
+        vc.title = "New Prompt"
+        vc.promptController = self.promptController
+        // prioritise calling updatePrompts()
         vc.update = {
             DispatchQueue.main.async {
-                self.updateDrawings()
+                self.updatePrompts()
             }
         }
         // go to entry view controller
@@ -78,8 +92,8 @@ extension ViewController: UITableViewDelegate {
     
     
         let vc = storyboard?.instantiateViewController(identifier: "drawing") as! DrawingViewController
-        vc.title = "New Drawing"
-        vc.drawing = drawings[indexPath.row]
+        vc.title = "New Prompt"
+        vc.prompt = prompts[indexPath.row]
         // return to root view controller
         navigationController?.pushViewController(vc, animated: true)
         
@@ -89,13 +103,13 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return drawings.count
+        return prompts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = drawings[indexPath.row]
+        cell.textLabel?.text = prompts[indexPath.row]
         
         return cell
     }
