@@ -12,6 +12,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var field: UITextField!
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
+    @IBOutlet var button: UIButton!
     
     let defaultLabelText = "Number of words in the prompt: "
     
@@ -28,14 +29,18 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(savePrompt))
         
         // "Generate" button
-        let button = UIButton(frame: CGRect(x: 100,
-                                            y: 300,
-                                            width: 200,
-                                            height: 60))
+        self.button.frame(forAlignmentRect: CGRect(x: 10,
+                                                   y: 300,
+                                                   width: 200,
+                                                   height: 60))
+//        self.button.frame(: CGRect(x: 100,
+//                                            y: 300,
+//                                            width: 200,
+//                                            height: 60))
         button.setTitle("Generate", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.addTarget(self, action: #selector(didTapGenerate), for: .touchUpInside)
-        self.view.addSubview(button)
+//        self.view.addSubview(button)
         
         // Slider
 //        let slider = UISlider(frame: CGRect(x: 0,
