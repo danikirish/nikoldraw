@@ -10,6 +10,10 @@ import UIKit
 class EntryViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var field: UITextField!
+    @IBOutlet var slider: UISlider!
+    @IBOutlet var label: UILabel!
+    
+    let defaultLabelText = "Number of words in the prompt: "
     
     var update: (() -> Void)?
     
@@ -23,6 +27,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(savePrompt))
         
+        // "Generate" button
         let button = UIButton(frame: CGRect(x: 100,
                                             y: 300,
                                             width: 200,
@@ -32,6 +37,34 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         button.addTarget(self, action: #selector(didTapGenerate), for: .touchUpInside)
         self.view.addSubview(button)
         
+        // Slider
+//        let slider = UISlider(frame: CGRect(x: 0,
+//                                            y: 100,
+//                                            width: 300,
+//                                            height: 20))
+        slider.frame(forAlignmentRect: CGRect(x: -20,
+                                              y: 50,
+                                              width: 300,
+                                              height: 20))
+//        slider.center = self.view.center
+        
+//        self.view.addSubview(slider)
+//
+        slider.minimumValue = 1
+        slider.maximumValue = 5
+        slider.isContinuous = false
+        slider.tintColor = UIColor.systemBlue
+        slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
+        
+        slider.setThumbImage(UIImage(named:"sliderThumb"), for: .normal)
+        slider.setThumbImage(UIImage(named:"sliderThumb"), for: .highlighted)
+
+        UIView.animate(withDuration: 0.8) {
+            self.slider.setValue(3, animated: true)
+        }
+        
+        // Label
+        updateLabel()
     }
     
 
@@ -42,6 +75,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    
     @objc func savePrompt() {
         //check not empty
         guard let text = field.text, !text.isEmpty else {
@@ -62,31 +96,30 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc
-    func didTapGenerate() {
+    @objc func didTapGenerate() {
         
         field.text?.removeAll()
         
 //        print("Generating...")
-        let newPrompt = promptController.generatePrompt(length: 3)
+        let newPrompt = promptController.generatePrompt(length: Int(self.slider.value))
         
         field.text?.append(newPrompt)
         
     }
     
-    // Called on button "Generate"
-//    @IBAction func didTapGenerate() {
-//
-//        let vc = storyboard?.instantiateViewController(identifier: "entry") as! EntryViewController
-//        vc.title = "New Drawing"
-//        // prioritise calling updateDrawings()
-//        vc.update = {
-//            DispatchQueue.main.async {
-//                self.updateDrawings()
-//            }
-//        }
-//        // go to entry view controller
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
+    @objc func sliderValueDidChange(_ sender: UISlider!) {
+        
+        
+        let rounderStepValue = round(sender.value / 1) * 1
+        sender.value = rounderStepValue
+        
+        updateLabel()
+        
+        print("Slider  value changed to \(Int(rounderStepValue))")
+    }
+    
+    func updateLabel() {
+        self.label.text = defaultLabelText + String(Int(self.slider.value))
+    }
 
 }

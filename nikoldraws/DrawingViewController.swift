@@ -16,20 +16,22 @@ class DrawingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Prompt details"
+    
         label.text = prompt
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteDrawing))
-        
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteDrawing))
+//
     }
     
-    @objc func deleteDrawing(){
+//    @objc func deleteDrawing(){
         
 //        let newCount = count - 1
 //
 //        UserDefaults().setValue(newCount, forKey: "count")
 //        UserDefaults().setValue(nil, forKey: "drawing_\(currentPosition)")
 //
-    }
+//    }
 
 
 }
