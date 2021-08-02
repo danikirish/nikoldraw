@@ -15,7 +15,7 @@ class PromptController: ObservableObject {
         
         self.words = ["dog", "cat", "racoon", "rat", "alpaca", "kitten", "puppy", "moon", "coffee", "tea", "parchute", "cactus", "houseplant", "sun", "hat", "airplane", "door", "portal", "skyscraper", "magazine", "letter", "book", "nature", "feather", "dragon", "camera", "forest", "bubbles", "idea", "memory", "fairytale", "anxiety", "pressure", "dream", "hope", "desire", "love", "sadness", "opportunity", "work", "madness", "cravings", "mystery", "childhood", "freedom", "energy", "achievement", "perspective",
                               "round", "tiny", "magenta", "purple", "grey", "huge", "long", "short", "pink", "blue", "fucsia", "solid", "chunky", "fluffy", "soft", "transparent", "sweet", "cold", "dangerous", "lovely", "tiresome", "revengeful", "horny", "beautiful", "melancholic", "joyful", "electric", "awesome", "terrible", "exhausted", "listless", "mysterious", "intangible", "delirious", "dazed", "sleepy", "happy", "injured",
-                              "running", "working", "playing", "dancing", "going", "disappearing", "smiling", "falling", "jumping", "reading", "writing", "flying", "laughing", "crawling", "crying", "fighting"
+                              "running", "working", "playing", "dancing", "going", "disappearing", "smiling", "falling", "jumping", "reading", "writing", "flying", "laughing", "crawling", "crying", "fighting", "Karina", "Danik", "Daulet", "Abyl", "London", "Almaty", "Newcastle", "Haileybury", "UCL"
                           ]
 //
 //        self.prompts = ["test"]
